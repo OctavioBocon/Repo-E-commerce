@@ -1,18 +1,20 @@
 import React from 'react'
 import CartWidget from './CarWidget'
 import { Menu, MenuButton, MenuList, MenuItem, Flex, Box, Spacer } from '@chakra-ui/react'
-
+import { Link } from 'react-router-dom'
+import brand from '../'
 const Navbar = () => {
   return (
     <div>
 
         <Flex>
-          <Box>         
-            {/*brand*/}
-            <h1>E-commerceAutos</h1>
+          <Box p='4'>
+            <Link to={"/"}
+              <img src={brand} alt="" width='100px' height='100px' /> 
+            </Link>        
           </Box>
           <Spacer/>
-              <Box>
+              <Box p='4'>
               <Menu>
                   <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
                     Categorias
@@ -27,6 +29,7 @@ const Navbar = () => {
           </Box>
           <Spacer />
           <Box>
+
               {/*Carrito*/}
               <CartWidget />
           </Box>
